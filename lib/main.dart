@@ -7,8 +7,8 @@ import 'firebase_options.dart';
 
 final providerConfigs = [
   const GoogleProviderConfiguration(
-    clientId:
-        '298559264630-ogitkm437mcl9av7ccn34h4k4nhb1519.apps.googleusercontent.com',
+    // TODO: Add your own client Id
+    clientId: '',
     scopes: [
       'https://www.googleapis.com/auth/userinfo.email',
       'https://www.googleapis.com/auth/userinfo.profile',
@@ -39,6 +39,14 @@ class MyApp extends StatelessWidget {
         '/sign-in': (context) {
           return SignInScreen(
             providerConfigs: providerConfigs,
+            footerBuilder: (context, authAction) {
+              return IconButton(
+                onPressed: () {
+                  FirebaseAuth.instance.signOut();
+                },
+                icon: const Icon(Icons.exit_to_app),
+              );
+            },
           );
         },
       },
