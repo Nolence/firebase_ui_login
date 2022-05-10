@@ -12,6 +12,6 @@ To recreate the firebase UI login issue.
 4. Follow steps from https://pub.dev/packages/google_sign_in to get the google sign in plugin (including adding GoogleService-Info.plist).
 5. Add your own clientId to `main.dart`
 6. Run the app.
-7. Sign in with google then cancel the sign in. "An unknown error occurred" will display.
-8. Similar issue happens when you create have an account and attempt again to sign in.
+7. Click the sign in with google button. On auth flow, cancel it and you'll see "An unknown error occurred". This is uniformative to the user.
+8. A similar error happens when you create have an account and attempt again to sign in thru the sign in flow.
 
